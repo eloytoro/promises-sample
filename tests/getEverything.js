@@ -1,7 +1,7 @@
 var chai = require('chai');
 var expect = chai.expect;
 var getEverything = require('../utils/getEverything');
-var getEverythingSeries = require('../utils/getEverything');
+var getEverythingSeries = require('../utils/getEverythingSeries');
 
 describe('getEverything', function() {
   it('should give me everything', function() {
