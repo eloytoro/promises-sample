@@ -1,11 +1,24 @@
-var getTweets = require('./utils/getTweets');
+var superPromise = Promise.all([
+  promise1,
+  promise2
+]);
 
-var eloy = getTweets('@eloytoro');
+// superPromise.then(results => {
+//   results === [promise1, promise2];
+// });
 
-eloy
-  .then(() => console.log('success'))
+const tweets = getTweets('@eloytoro').then(tweets => {
+  return tweets.concat(['More tweets']);
+});
 
-var notrelevant = getTweets('@notrelevant');
+tweets.then(tweets => {
+  console.log(tweets) // <- ['More Tweets','NodeJS is awesome' ...]
+});
 
-notrelevant
-  .catch(() => console.log('catched'))
+const superPromise = promise1.then(result1 => {
+  return promise2.then(result2 => {
+    return ?
+  });
+});
+
+superPromise.then(result => console.log(result));
